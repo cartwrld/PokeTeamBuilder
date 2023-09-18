@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca8ca09e-f19a-4e2b-b520-e6f09958da46" name="Changes" comment="initial commit of progress">
-      <change afterPath="$PROJECT_DIR$/public/javascripts/PokeType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/pokestyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/PokeStats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/PokeStats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/Pokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
@@ -52,7 +51,7 @@
     "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "19.9.0",
     "javascript.nodejs.core.library.typings.version": "20.6.2",
-    "last_opened_file_path": "D:/GitHub/CWEB280-Files/lo1serveronly",
+    "last_opened_file_path": "D:/GitHub/PokeTeamBuilder/public/stylesheets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -66,6 +65,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\PokeTeamBuilder\public\stylesheets" />
       <recent name="D:\GitHub\pokedex" />
       <recent name="D:\GitHub\pokedex\public\javascripts" />
     </key>
@@ -106,7 +106,7 @@
       <workItem from="1694974941910" duration="5226000" />
       <workItem from="1694980348870" duration="8965000" />
       <workItem from="1694990528982" duration="93000" />
-      <workItem from="1694990638869" duration="15632000" />
+      <workItem from="1694990638869" duration="22852000" />
     </task>
     <servers />
   </component>

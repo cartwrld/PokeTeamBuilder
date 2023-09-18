@@ -7,7 +7,7 @@ const Pokemon = require('../public/javascripts/Pokemon.js');
 const rand10arr = [];
 
 async function generate10RandomHomePagePokemon() {
-  let homepagePokes;
+  let homepagePokes = [];
   try {
     // array of 10 poke objs
     homepagePokes =
@@ -31,10 +31,8 @@ async function generate10RandomHomePagePokemon() {
                     if (!response.data) {
                       throw new Error(`Fetch ${i} HTTP error! Status: ${response.status}`);
                     }
-                    const pokeData = response.data;
 
-
-                    const randPoke = buildPokeObj(pokeData);
+                    const randPoke = buildPokeObj(response.data);
                     rand10arr.push(randPoke);
                   });
             }
@@ -46,22 +44,22 @@ async function generate10RandomHomePagePokemon() {
   return homepagePokes;
 }
 
-function buildPokeObj(pd) {
+function buildPokeObj(pokeData) {
   // initial build of the Pokemon based off the passed in data
   const pokeObj = new Pokemon(
-      pd.name,
-      pd.id,
-      pd.base_experience,
-      pd.stats,
-      pd.sprites.back_default,
+      pokeData.name,
+      pokeData.id,
+
+      // pokeData.stats,
+      pokeData.sprites.front_default,
   );
 
   // checking to see if the Pokemon is multi-typed
-  if (pd.types.length === 1) {
-    pokeObj.type1 = pd.types[0].type.name;
+  if (pokeData.types.length === 1) {
+    pokeObj.type1 = pokeData.types[0].type.name;
   } else {
-    pokeObj.type1 = pd.types[0].type.name;
-    pokeObj.type2 = pd.types[1].type.name;
+    pokeObj.type1 = pokeData.types[0].type.name;
+    pokeObj.type2 = pokeData.types[1].type.name;
   }
   return pokeObj;
 }
@@ -71,25 +69,33 @@ function buildPokeObj(pd) {
 router.get('/', async function(req, res, next) {
   // console.log()
 
-  generate10RandomHomePagePokemon()
-      .then((r10) => {
-        console.log(r10);
-      });
   const rand10Pokes = [];
 
-  for (let i=0; i<10; i++) {
-    for (const prop in rand10Pokes[i]) {
-      console.log(prop);
-    }
-  }
+  generate10RandomHomePagePokemon()
+      .then((r10) => {
+        for (const [, poke] of Object.entries(r10)) {
+          rand10Pokes.push({
+            pokename: poke.name,
+            pokeid: poke.id,
+            pokesprite: poke.sprite,
+            pokegen: poke.gen,
+            poketype1: poke.getPokeTypes()[0],
+            poketype2: poke?.type2,
+            multitype: poke.type2 !== undefined,
+          });
+        }
+        console.log(rand10Pokes);
 
-  res.render('index', {
-    title: 'PokeDex',
-    path: 'https://www.pngkit.com/png/full/783-7831178_pokeball-pokeball-pixel-png.png',
+        res.render('index', {
+          title: 'PokeDex',
+          path: 'https://www.pngkit.com/png/full/783-7831178_pokeball-pokeball-pixel-png.png',
+          cards: rand10Pokes,
 
-    cards: rand10Pokes,
+          // cards: rand10Pokes,
 
-  });
+        });
+      });
+
 
   // const xxx = [];
   // for (const pokemon of rand10Pokes) {
@@ -99,7 +105,15 @@ router.get('/', async function(req, res, next) {
   //   });
   // }
 });
-
+// switch (prop) {
+//   case 'stats':
+//     console.log(`${prop}\t:`);
+//     const pokestats = poke[prop];
+//     for (const stat in pokestats) {
+//       console.log(`\t${stat}\t: ${pokestats[stat]}`);
+//     }
+//     break;
+//   default: console.log(`${prop}\t: ${poke[prop]}`); break;
 module.exports = router;
 
 
