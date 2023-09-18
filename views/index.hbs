@@ -52,14 +52,29 @@
         <div class="container bg-info">
             <div class="d-flex flex-wrap bg-dark justify-content-around">
                 {{#each cards}}
-                    <div class="card bg-dark-subtle col-5">
-                        <img src="{{pokeimg}}" alt="sprite" />
-                        <p>Name: {{pokename}}</p>
-                        <p>ID: {{pokeid}}</p>
-                        <p>Base Experience: {{pokeexp}}</p>
-
-
+                    <div class="card_container">
+                    <div class="card">
+                        <div class="top_row">
+                            <div class="poke_number">
+                                <div class="num_circle">{{pokeId}}</div>
+                            </div>
+                            <div class="poke_name">{{pokeName}}</div>
+                        </div>
+                        <div class="poke_img">{{pokeImg}}div>
+                            <div class="type_row">
+                            <div class="poke_type t1">{{type1}}</div>
+                                {{#if multiType}}
+                                    <div class="poke_type t2">{{type2}}</div>
+                                {{/if}}
+                            </div>
+                        </div>
                     </div>
+<!--                    <div class="card bg-dark-subtle col-5">-->
+<!--                        <img src="{{pokeimg}}" alt="sprite" />-->
+<!--                        <p>Name: {{pokename}}</p>-->
+<!--                        <p>ID: {{pokeid}}</p>-->
+<!--                        <p>Base Experience: {{pokeexp}}</p>-->
+<!--                    </div>-->
                 {{/each}}
             </div>
         </div>
