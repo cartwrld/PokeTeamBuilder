@@ -79,5 +79,5 @@ function onListening() {
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
 
-    console.log(`Ready to view @ http://localhost:${port}/examples/form`);
+    console.log(`Ready to view @ http://localhost:${port}`);
 }
