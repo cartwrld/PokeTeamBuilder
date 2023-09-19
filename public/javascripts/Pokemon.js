@@ -1,40 +1,28 @@
 const PokeStats = require('./PokeStats');
+const PokeType = require('./PokeType');
 // const PokeType = require('./PokeType');
 
 class Pokemon {
-  // constructor(name, id, baseExp, stats, sprite) {
-  constructor(name, id, sprite) {
+  constructor(name, id, sprite, stats, type1) {
+  // constructor(name, id, sprite) {
     this.name = name;
     this.id = id;
     this.sprite = sprite;
-
-    // this.stats = new PokeStats(stats);
-
-    // types are set in the index.js file
-
+    this.stats = new PokeStats(stats);
     this.setPokeGen(id);
-    // this.setPokeType(types);
+    this.type1 = type1;
+    // type 2 is set in the
   }
 
-
-  setPokeType(poketypes) {
-    console.log(poketypes);
-    if (poketypes.length > 1) {
-      this.types = new PokeType(poketypes[0], poketypes[1]);
-    } else {
-      this.types = new PokeType(poketypes[0]);
-    }
-  }
   getPokeTypes() {
-    const retArr = [];
+    const typeArr = [];
     if (this.type2 !== undefined) {
-      retArr.push(this.type1);
-      retArr.push(this.type2);
-      return retArr;
+      typeArr.push(this.type1);
+      typeArr.push(this.type2);
     } else {
-      retArr.push(this.type1);
-      return retArr;
+      typeArr.push(this.type1);
     }
+    this.types = new PokeType();
   }
 
   setPokeGen(id) {

@@ -1,0 +1,17 @@
+<div class="card_container">
+    <div class="card">
+        <div class="top_row">
+            <div class="poke_number">
+                <div class="num_circle">{{pokeid}}</div>
+            </div>
+            <div class="poke_name">{{pokename}}</div>
+        </div>
+        <div class="poke_img">{{pokesprite}}</div>
+        <div class="type_row">
+            <div class="poke_type t1">{{poketype1}}</div>
+            {{#if multitype}}
+                <div class="poke_type t2">{{poketype2}}</div>
+            {{/if}}
+        </div>
+    </div>
+</div>

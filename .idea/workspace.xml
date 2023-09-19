@@ -5,8 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca8ca09e-f19a-4e2b-b520-e6f09958da46" name="Changes" comment="initial commit of progress">
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/pokestyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/PokeType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/pokefunctions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/navbar.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/pokecard.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/README.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/README.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/code-gen.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/code-gen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/compiler/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/internal/proto-access.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/internal/proto-access.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/no-conflict.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/handlebars/no-conflict.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/precompiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/amd/precompiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/internal/proto-access.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/internal/proto-access.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/no-conflict.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/handlebars/no-conflict.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/precompiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/cjs/precompiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.amd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.amd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/dist/handlebars.runtime.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/code-gen.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/code-gen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/javascript-compiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/javascript-compiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/compiler/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers/each.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/helpers/each.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/internal/proto-access.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/internal/proto-access.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/no-conflict.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/handlebars/no-conflict.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/lib/precompiler.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/lib/precompiler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/print-script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/handlebars/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/handlebars/release-notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/PokeStats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/PokeStats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/Pokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
@@ -51,7 +96,7 @@
     "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "19.9.0",
     "javascript.nodejs.core.library.typings.version": "20.6.2",
-    "last_opened_file_path": "D:/GitHub/PokeTeamBuilder/public/stylesheets",
+    "last_opened_file_path": "D:/GitHub/PokeTeamBuilder/public/javascripts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -60,11 +105,14 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "D:\\apps and programs\\JetBrains\\WebStorm\\WebStorm 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\PokeTeamBuilder\public\javascripts" />
+      <recent name="D:\GitHub\PokeTeamBuilder\views\partials" />
       <recent name="D:\GitHub\PokeTeamBuilder\public\stylesheets" />
       <recent name="D:\GitHub\pokedex" />
       <recent name="D:\GitHub\pokedex\public\javascripts" />
@@ -106,7 +154,8 @@
       <workItem from="1694974941910" duration="5226000" />
       <workItem from="1694980348870" duration="8965000" />
       <workItem from="1694990528982" duration="93000" />
-      <workItem from="1694990638869" duration="22852000" />
+      <workItem from="1694990638869" duration="22982000" />
+      <workItem from="1695076867736" duration="10864000" />
     </task>
     <servers />
   </component>

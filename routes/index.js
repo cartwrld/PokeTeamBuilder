@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const Pokemon = require('../public/javascripts/Pokemon.js');
+const PowerPoke = require('../public/javascripts/PowerPoke.js');
+const pwrpke = new PowerPoke();
+// const {defaults} = require('axios');
 
 
 const rand10arr = [];
@@ -32,7 +35,7 @@ async function generate10RandomHomePagePokemon() {
                       throw new Error(`Fetch ${i} HTTP error! Status: ${response.status}`);
                     }
 
-                    const randPoke = buildPokeObj(response.data);
+                    const randPoke = pwrpke.buildPokeObj(response.data);
                     rand10arr.push(randPoke);
                   });
             }
@@ -44,25 +47,34 @@ async function generate10RandomHomePagePokemon() {
   return homepagePokes;
 }
 
-function buildPokeObj(pokeData) {
-  // initial build of the Pokemon based off the passed in data
-  const pokeObj = new Pokemon(
-      pokeData.name,
-      pokeData.id,
-
-      // pokeData.stats,
-      pokeData.sprites.front_default,
-  );
-
-  // checking to see if the Pokemon is multi-typed
-  if (pokeData.types.length === 1) {
-    pokeObj.type1 = pokeData.types[0].type.name;
-  } else {
-    pokeObj.type1 = pokeData.types[0].type.name;
-    pokeObj.type2 = pokeData.types[1].type.name;
-  }
-  return pokeObj;
-}
+// function buildPokeObj(pokeData) {
+//   // initial build of the Pokemon based off the passed in data
+//   // console.log(pokeData.types);
+//   //
+//   // for (const type of pokeData.types) {
+//   //   if (type.name !== undefined) {
+//   //     // typeArr.push(type);
+//   //     console.log(type.name);
+//   //   } else {
+//   //     console.log('No base_stat available for this object.');
+//   //   }
+//   // }
+//
+//   const p = new Pokemon(
+//       pokeData.name,
+//       pokeData.id,
+//       pokeData.sprites.front_default,
+//       pokeData.stats,
+//       pokeData.types[0].type.name,
+//   );
+//
+//   if (pokeData.types.length > 1) {
+//     p.type2 = pokeData.types[1].type.name;
+//   }
+//
+//   console.log(p);
+//   return p;
+// }
 
 
 /* GET home page. */
@@ -73,18 +85,37 @@ router.get('/', async function(req, res, next) {
 
   generate10RandomHomePagePokemon()
       .then((r10) => {
+        function getPokeStatsObj(pokemon) {
+          return {
+            pokeHP: pokemon.stats.hp,
+            pokeATK: pokemon.stats.attack,
+            pokeDEF: pokemon.stats.defense,
+            pokeSPATK: pokemon.stats.specAtk,
+            pokeSPDEF: pokemon.stats.specDef,
+            pokeSPD: pokemon.stats.speed,
+          };
+        }
+        function getPokeTypeObj(pokemon) {
+          console.log();
+          return {
+            poketype1: pokemon.type1,
+            poketype2: pokemon.type2?.name,
+
+          };
+        }
+
         for (const [, poke] of Object.entries(r10)) {
           rand10Pokes.push({
             pokename: poke.name,
             pokeid: poke.id,
             pokesprite: poke.sprite,
             pokegen: poke.gen,
-            poketype1: poke.getPokeTypes()[0],
-            poketype2: poke?.type2,
+            poketypes: getPokeTypeObj(poke),
+            pokestats: getPokeStatsObj(poke),
             multitype: poke.type2 !== undefined,
           });
         }
-        console.log(rand10Pokes);
+        // console.log(rand10Pokes);
 
         res.render('index', {
           title: 'PokeDex',
