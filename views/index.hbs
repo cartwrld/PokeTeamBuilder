@@ -1,28 +1,25 @@
-<div class="container">
+<div class="container-fluid">
 
-
-    <h1>Welcome to {{title}}!</h1>
-    <img src="{{path}}" alt="pokeball" width="200px" height="200px"/>
-    <h4><a href="/pokedex/">Enter PokeDex</a></h4>
-
-    <div class="container rounded-4 bg-danger shadow-4 d-flex justify-content-center align-items-center">
-        <div class="d-flex rounded-4 shadow-4 flex-wrap bg-dark-subtle justify-content-around mx-4 my-5 px-4">
-            {{#each cards}}
-                <div class="card d-flex justify-content-center align-items-center bg-light-subtle rounded-4 shadow-4 col-2 mx-3 my-5 text-dark">
-                    <img src="{{pokesprite}}" alt="{{pokename}}"/>
-                    <p>Name: {{pokename}}</p>
-                    <p>ID: {{pokeid}}</p>
-                    <p>Generation: {{pokegen}}</p>
-                    <div class="d-flex justify-content-center align-items-center">
-
-                        <p class="text-center col-1p-1">Type 1: {{poketype1}}</p>
-                        {{#if multitype}}
-                            <p class="text-center p-1">Type 2: {{poketype2}}</p>
-                        {{/if}}
-                    </div>
-                </div>
-            {{/each}}
+    <div class="d-flex flex-column justify-content-center align-items-center pt-5 pb-4">
+        <h1>Welcome to PowerPoke!</h1>
+        <div class="d-flex justify-content-around flex-nowrap">
+            <input class="btn btn-outline-danger mx-2" type="button" value="Build a Pokemon" id="buildPkmBtn"/>
+            <input class="btn btn-outline-danger mx-2" type="button" value="Build a Team" id="buildTeamBtn"/>
         </div>
+    </div>
 
+    <div class="p-3">
+
+        <div class="container-fluid container-xxl rounded-3 bg-danger d-flex flex-column justify-content-center align-items-center my-3">
+            <div class="d-flex bg-light-subtle rounded-4 flex-wrap justify-content-around mx-4 my-5 p-4 ">
+            <div class="container-fluid bg-light m-0 d-flex align-items-center">
+                <h2 class="p-0 m-0">Popular Pokemon</h2>
+            </div>
+                {{#each cards}}
+                    {{>pokecard}}
+                {{/each}}
+            </div>
+
+        </div>
     </div>
 </div>

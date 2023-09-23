@@ -67,6 +67,13 @@ class PowerPoke {
     // console.log(p);
     return p;
   }
+
+  capitalizeFirstLetterOfValue(value) {
+    if (value === null || value === undefined) {
+      return;
+    }
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
 }
 
 module.exports = PowerPoke;

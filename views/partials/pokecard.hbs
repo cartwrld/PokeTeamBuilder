@@ -1,17 +1,33 @@
-<div class="card_container">
-    <div class="card">
-        <div class="top_row">
-            <div class="poke_number">
-                <div class="num_circle">{{pokeid}}</div>
+<div class="card
+col-8 col-sm-5 col-lg-3 col-xl-2 col-xxl-2
+mx-2 my-3
+rounded-3
+bg-light-subtle
+d-flex justify-content-center align-items-center
+text-dark">
+<!--<div class="card d-flex justify-content-center align-items-center p-3 col-6 mx-0">-->
+    <div class="container d-flex py-2 rounded-top-3 bg-danger-subtle justify-content-start mx-0 " >
+        <div class="d-flex justify-content-start align-items-center rounded-5 bg-dark-subtle  mx-0">
+            <div class="container">
+                {{pokeid}}
             </div>
-            <div class="poke_name">{{pokename}}</div>
         </div>
-        <div class="poke_img">{{pokesprite}}</div>
-        <div class="type_row">
-            <div class="poke_type t1">{{poketype1}}</div>
-            {{#if multitype}}
-                <div class="poke_type t2">{{poketype2}}</div>
-            {{/if}}
+        <div class="container">
+            {{pokename}}
         </div>
+    </div>
+    <div class="px-4 py-2">
+        <img src="{{pokesprite}}" alt="{{pokename}}" width="150px" height="150px"/>
+    </div>
+    <div class="d-flex justify-content-around align-items-center m-3 mt-0 mx-5">
+
+        <div class="container bg-primary-subtle">
+            <div class="text-center p-1">{{poketype1}}</div>
+        </div>
+        {{#if multitype}}
+            <div class="container bg-success-subtle">
+                <div class="text-center p-1">{{poketype2}}</div>
+            </div>
+        {{/if}}
     </div>
 </div>
