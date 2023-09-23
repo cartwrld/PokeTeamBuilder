@@ -4,14 +4,27 @@ const PokeType = require('./PokeType');
 
 class Pokemon {
   constructor(name, id, sprite, stats, type1) {
-  // constructor(name, id, sprite) {
+    // console.log(stats);
+    // constructor(name, id, sprite) {
     this.name = name;
     this.id = id;
     this.sprite = sprite;
-    this.stats = new PokeStats(stats);
+    // this.stats = new PokeStats(stats);
+    this.setPokeStats(stats);
     this.setPokeGen(id);
     this.type1 = type1;
-    // type 2 is set in the
+    // type 2 is set in the api call
+  }
+
+  setPokeStats(stats) {
+    this.stats = {
+      hp: stats[0].base_stat,
+      attack: stats[1].base_stat,
+      defense: stats[2].base_stat,
+      specAtk: stats[3].base_stat,
+      specDef: stats[4].base_stat,
+      speed: stats[5].base_stat,
+    };
   }
 
   getPokeTypes() {
