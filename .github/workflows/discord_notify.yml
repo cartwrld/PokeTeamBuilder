@@ -6,7 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-https://discord.com/api/webhooks/1156003800545497159/tBysqzw5Pb7Wm38snNfPURTOVP-9dTUxmkI4dLKdkp3zR_IwAhllTvVpd7wtJi0_PSNb
 
     steps:
     - name: Send Discord message
