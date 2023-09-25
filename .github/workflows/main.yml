@@ -1,0 +1,18 @@
+name: Discord Notification on Push
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send Discord message
+      uses: appleboy/discord-action@master
+      with:
+        webhook_id: ${{ secrets.1155993796430004245 }}
+        webhook_token: ${{ secrets.MTE1NTk5Mzc5NjQzMDAwNDI0NQ.G98-EH.XckXgnD09GzHCq90iJgiivYaj2NdjsI-BkbQtI }}
+        text: |
+          New code has been pushed to ${{ github.repository }} by ${{ github.actor }}
+          [Commit Message: ${{ github.event.head_commit.message }}]
+          [View Changes](${{ github.event.compare }})
