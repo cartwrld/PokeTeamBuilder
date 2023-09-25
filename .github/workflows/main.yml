@@ -6,12 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+https://discord.com/api/webhooks/1156003800545497159/tBysqzw5Pb7Wm38snNfPURTOVP-9dTUxmkI4dLKdkp3zR_IwAhllTvVpd7wtJi0_PSNb
+
     steps:
     - name: Send Discord message
       uses: appleboy/discord-action@master
       with:
-        webhook_id: ${{ secrets.1155993796430004245 }}
-        webhook_token: ${{ secrets.MTE1NTk5Mzc5NjQzMDAwNDI0NQ.G98-EH.XckXgnD09GzHCq90iJgiivYaj2NdjsI-BkbQtI }}
+        webhook_id: ${{ secrets.1156003800545497159 }}
+        webhook_token: ${{ secrets.tBysqzw5Pb7Wm38snNfPURTOVP-9dTUxmkI4dLKdkp3zR_IwAhllTvVpd7wtJi0_PSNb }}
         text: |
           New code has been pushed to ${{ github.repository }} by ${{ github.actor }}
           [Commit Message: ${{ github.event.head_commit.message }}]
