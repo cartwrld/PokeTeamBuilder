@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Send Discord message
-      uses: appleboy/discord-action@master
+      uses: appleboy/discord-action@latest_version_here
       with:
         webhook_id: ${{ secrets.1156003800545497159 }}
         webhook_token: ${{ secrets.tBysqzw5Pb7Wm38snNfPURTOVP-9dTUxmkI4dLKdkp3zR_IwAhllTvVpd7wtJi0_PSNb }}
