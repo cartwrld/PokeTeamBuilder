@@ -5,10 +5,6 @@ const PowerPoke = require('../public/javascripts/PowerPoke.js');
 
 const pp = new PowerPoke();
 
-// let random10HPP;
-
-// const rand10arr = [];
-
 async function generate10RandomHomePagePokemon() {
   const initList = await pp.getInitialPokeCountWithURL();
   let x;
@@ -24,12 +20,10 @@ async function generate10RandomHomePagePokemon() {
 router.get('/', async function(req, res, next) {
   const displayPokes = [];
   const rand10Pokes = await generate10RandomHomePagePokemon();
-  // console.log(rand10Pokes);
-  // console.log(rand10Pokes.length);
   const outputInfo = async () => {
     for (const [, poke] of Object.entries(rand10Pokes)) {
       displayPokes.push({
-        pokename: pp.capitalizeFirstLetterOfValue(poke.name),
+        pokename: pp.formatPokeName(poke.name),
         pokeid: poke.id,
         pokesprite: poke.sprite,
         pokegen: poke.gen,
@@ -46,14 +40,6 @@ router.get('/', async function(req, res, next) {
         multitype: poke.type2 !== undefined,
       });
     }
-
-    // async function getPokeStatsObj(pokemon) {
-    //   return;
-    // }
-
-    // async function getPokeTypeObj(pokemon) {
-    //   return;
-    // }
   };
 
   await outputInfo();
