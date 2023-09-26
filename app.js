@@ -73,13 +73,13 @@ app.post('/github-webhook', (req, res) => {
 
     // Get the Discord channel by ID
     const targetChannel = client.channels.cache.get(targetChannelId);
-
+    console.log(targetChannel);
     if (targetChannel && targetChannel.isText()) {
       // Send the message to the specified Discord channel
       targetChannel.send(`New commit to ${repoName}: ${commitMessage}`);
     }
   }
-  //
+  // //
   res.sendStatus(200);
 });
 
