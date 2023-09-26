@@ -59,6 +59,8 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
+app.use(bodyParser.json());
+
 client.login(process.env.DISCORD_BOT_TOKEN);
 
 // Replace 'YOUR_DISCORD_CHANNEL_ID' with the actual channel ID
