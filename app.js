@@ -7,7 +7,7 @@ const hbs = require('hbs');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const pokedexRouter = require('./routes/pokedex'); // using the pokedex.js file
+const teamBuilderRouter = require('./routes/teambuilder'); // using the teambuilder.js file
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/pokedex', pokedexRouter); // This is what determines the path name
+app.use('/teambuilder', teamBuilderRouter); // This is what determines the path name
 
 // bootswatch styles
 app.use('/bw', express.static(__dirname + '/node_modules/bootswatch/dist'));
