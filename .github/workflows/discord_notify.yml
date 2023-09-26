@@ -1,7 +1,7 @@
+---
 name: Simple Action
-
-on: [push]
-
+on:
+  - push
 jobs:
   build:
     runs-on: ubuntu-latest
