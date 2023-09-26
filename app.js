@@ -47,6 +47,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Discord Bot Added
+// Discord Bot Added?
 
 module.exports = app;
