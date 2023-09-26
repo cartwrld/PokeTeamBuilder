@@ -11,8 +11,8 @@ jobs:
     - name: Send Discord message
       uses: appleboy/discord-action@master
       with:
-        webhook_id: ${{ secrets.1156003800545497159 }}
-        webhook_token: ${{ secrets.tBysqzw5Pb7Wm38snNfPURTOVP-9dTUxmkI4dLKdkp3zR_IwAhllTvVpd7wtJi0_PSNb }}
+        webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+        webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
         text: |
           New code has been pushed to ${{ github.repository }} by ${{ github.actor }}
           [Commit Message: ${{ github.event.head_commit.message }}]
