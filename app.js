@@ -62,7 +62,7 @@ const client = new Client({
 client.login(process.env.DISCORD_BOT_TOKEN);
 
 // Replace 'YOUR_DISCORD_CHANNEL_ID' with the actual channel ID
-const targetChannelId = process.env.DISCORD_BOT_TOKEN;
+const targetChannelId = process.env.DISCORD_CHANNEL_ID;
 
 app.post('/github-webhook', (req, res) => {
   const {body} = req;
