@@ -49,4 +49,44 @@ app.use(function(err, req, res, next) {
 
 // Discord Bot Added?
 
+
+// Discord Bot Integration
+const {Client, GatewayIntentBits} = require('discord.js');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+
+const client = new Client({
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+});
+
+client.login(process.env.DISCORD_BOT_TOKEN);
+
+// Replace 'YOUR_DISCORD_CHANNEL_ID' with the actual channel ID
+const targetChannelId = 'YOUR_DISCORD_CHANNEL_ID';
+
+app.post('/github-webhook', (req, res) => {
+  const {body} = req;
+
+  if (body && body.ref === 'refs/heads/main') {
+    const repoName = body.repository.full_name;
+    const commitMessage = body.commits[0].message;
+
+    // Get the Discord channel by ID
+    const targetChannel = client.channels.cache.get(targetChannelId);
+
+    if (targetChannel && targetChannel.isText()) {
+      // Send the message to the specified Discord channel
+      targetChannel.send(`New commit to ${repoName}: ${commitMessage}`);
+    }
+  }
+
+  res.sendStatus(200);
+});
+
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}`);
+});
+
+// ////
+
 module.exports = app;
