@@ -5,15 +5,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
-
     steps:
-    - name: Send Discord message
-      uses: appleboy/discord-action@master
-      with:
-        webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
-        webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-        text: |
-          New code has been pushed to ${{ github.repository }} by ${{ github.actor }}
-          [Commit Message: ${{ github.event.head_commit.message }}]
-          [View Changes](${{ github.event.compare }})
+    - name: Run a one-line script
+      run: echo "Hello, world!"
