@@ -1,32 +1,36 @@
-const PokeStats = require('./PokeStats');
-const PokeType = require('./PokeType');
-// const PokeType = require('./PokeType');
-
 class Pokemon {
   constructor(name, id, sprite, stats, type1) {
-    // console.log(stats);
-    // constructor(name, id, sprite) {
     this.name = name;
     this.id = id;
     this.sprite = sprite;
-    // this.stats = new PokeStats(stats);
     this.setPokeStats(stats);
     this.setPokeGen(id);
     this.type1 = type1;
     // type 2 is set in the api call
   }
 
-  setPokeStats(stats) {
+  /**
+   * Sets the stats property as an object containing the following properties:
+   *
+   * hp, attack, defense, specAtk, specDef, speed
+   *
+   * @param {[{}]} statsObj - array from json response
+   */
+  setPokeStats(statsObj) {
     this.stats = {
-      hp: stats[0].base_stat,
-      attack: stats[1].base_stat,
-      defense: stats[2].base_stat,
-      specAtk: stats[3].base_stat,
-      specDef: stats[4].base_stat,
-      speed: stats[5].base_stat,
+      hp: statsObj[0].base_stat,
+      attack: statsObj[1].base_stat,
+      defense: statsObj[2].base_stat,
+      specAtk: statsObj[3].base_stat,
+      specDef: statsObj[4].base_stat,
+      speed: statsObj[5].base_stat,
     };
   }
 
+  /**
+   * Function that will return an array with the types.
+   * @return {*[]} - [type1] or [type1,type2]
+   */
   getPokeTypes() {
     const typeArr = [];
     if (this.type2 !== undefined) {
@@ -35,10 +39,13 @@ class Pokemon {
     } else {
       typeArr.push(this.type1);
     }
-    this.types = new PokeType();
+    return typeArr;
   }
 
-  setPokeGen(id) {
+  /**
+   * Function for setting setting the Generation of the Pokemon based on the ID
+   */
+  setPokeGen() {
     const pokeNum = this.id;
     switch (true) {
       case pokeNum <= 151:

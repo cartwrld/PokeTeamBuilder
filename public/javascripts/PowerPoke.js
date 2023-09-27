@@ -121,6 +121,23 @@ class PowerPoke {
     }
     return value.charAt(0).toUpperCase() + value.slice(1);
   }
+
+
+  async fetchByGeneration(searchGen) {
+    try {
+      const getGenOnlySearchResults = async () => {
+        const genRes = await fetch(`https://pokeapi.co/api/v2/generation/${searchGen}/`);
+        if (genRes.ok) {
+          const countData = await genRes.json();
+          console.log(countData.results.length);
+          return countData;
+        }
+      };
+      return await getGenOnlySearchResults();
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
 
 
