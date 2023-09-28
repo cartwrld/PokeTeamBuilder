@@ -1,5 +1,8 @@
 const Pokemon = require('./Pokemon.js');
 
+let apiResults;
+const currentOffset = 0;
+
 class PowerPoke {
   /**
    * Initial fetch to get the length of the resultset in order to generate 10 random Pokemon within the boundaries
@@ -8,14 +11,15 @@ class PowerPoke {
   async getInitialPokeCountWithURL() {
     try {
       const getPokeCountData = async () => {
-        const res1 = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
+        const res1 = await fetch('https://pokeapi.co/api/v2/pokemon?limit=905&offset=0');
         if (res1.ok) {
           const countData = await res1.json();
           console.log(countData.results.length);
           return countData;
         }
       };
-      return await getPokeCountData();
+      apiResults = await getPokeCountData();
+      return apiResults;
     } catch (error) {
       console.error(error);
     }
@@ -53,6 +57,25 @@ class PowerPoke {
     return rndmPokes;
   }
 
+  async getNext20Pokes(initResp) {
+    const poke20List = [];
+    try {
+      for (let i= currentOffset; i<currentOffset + 20; i++) {
+        const pokeURL = initResp.results[i].url;
+
+        const response = await fetch(pokeURL);
+        if (response.ok) {
+          const results = response.json();
+          const newPoke = this.buildPokeObj(results);
+          poke20List.push(newPoke);
+        }
+      }
+      return poke20List;
+    } catch (error) {
+      console.error(error);
+    }
+    return poke20List;
+  }
   /**
    * Method that can be used for constructing a Pokemon object from the JSON data
    * @param pokeData - JSON Object corresponding to the current random Pokemon
@@ -62,7 +85,7 @@ class PowerPoke {
     const p = new Pokemon(
         pokeData.name,
         pokeData.id,
-        pokeData.sprites.front_default,
+        pokeData.sprites?.front_default,
         pokeData.stats,
         pokeData.types[0].type.name,
     );

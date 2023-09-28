@@ -13,12 +13,68 @@
                     mt-3
 ">
             <!-- will have to send this as a post to the server -->
-            {{>teamcard}}
-            {{>teamcard}}
-            {{>teamcard}}
-            {{>teamcard}}
-            {{>teamcard}}
-            {{>teamcard}}
+<!--            {{>teamcard}}-->
+<!--            {{>teamcard}}-->
+<!--            {{>teamcard}}-->
+<!--            {{>teamcard}}-->
+<!--            {{>teamcard}}-->
+<!--            {{>teamcard}}-->
+
+            <div class="card col-2 border" id="teamSlot1">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+            <div class="card col-2 border" id="teamSlot2">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+            <div class="card col-2 border" id="teamSlot3">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+            <div class="card col-2 border" id="teamSlot4">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+            <div class="card col-2 border" id="teamSlot5">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+            <div class="card col-2 border" id="teamSlot6">
+                <div>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>img</p>
+                    <p>type1</p>
+                    <p>type2</p>
+                </div>
+            </div>
+
         </div>
         <!-- button container-->
         <div class="container p-3 d-flex justify-content-between">
@@ -32,7 +88,7 @@
 <div class="container-fluid container-xxl bg-danger text-center rounded-4 py-2">
     <h2 class="p-0 m-0 pb-3 text-light">Select your Pokemon</h2>
     <!-- inner base container -->
-    <div class="container-fluid d-flex flex-column justify-content-around align-content-center mb-1 bg-light rounded-3">
+    <div class="container-fluid bg-light bg-dark-subtle bg-gradient d-flex flex-column justify-content-around align-content-center mb-1 bg-light rounded-3">
         <!-- heading + form container -->
         <div class="d-flex flex-column py-4">
             <!-- filters heading container -->
@@ -131,6 +187,11 @@
             <div class="container-fluid col-2 py-3 d-flex justify-content-center">
                 <input class="btn btn-success" type="button" value="Apply">
             </div>
+        </div>
+        <div class="container bg-primary">
+            {{#each display20Pokes}}
+                {{>teamcardoption}}
+            {{/each}}
         </div>
 
     </div>

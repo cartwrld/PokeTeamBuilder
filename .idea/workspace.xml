@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca8ca09e-f19a-4e2b-b520-e6f09958da46" name="Changes" comment="initial commit of progress">
+      <change afterPath="$PROJECT_DIR$/views/partials/teamcardoption.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/PokeStats.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/PokeType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/Pokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/PowerPoke.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/PowerPoke.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/teambuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/teambuilder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/pokecard.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/pokecard.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/navbar.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/navbar.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/teamcard.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/teamcard.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/teambuilder.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/teambuilder.hbs" afterDir="false" />
     </list>
@@ -61,7 +53,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "19.9.0",
     "javascript.nodejs.core.library.typings.version": "20.7.0",
-    "last_opened_file_path": "D:/GitHub/PokeAPI",
+    "last_opened_file_path": "D:/GitHub/PokeTeamBuilder/views/partials",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,8 +68,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\PokeTeamBuilder\public\javascripts" />
       <recent name="D:\GitHub\PokeTeamBuilder\views\partials" />
+      <recent name="D:\GitHub\PokeTeamBuilder\public\javascripts" />
       <recent name="D:\GitHub\PokeTeamBuilder\public\stylesheets" />
       <recent name="D:\GitHub\pokedex" />
       <recent name="D:\GitHub\pokedex\public\javascripts" />
@@ -127,7 +119,11 @@
       <workItem from="1695684410733" duration="135000" />
       <workItem from="1695684569521" duration="9516000" />
       <workItem from="1695747642817" duration="5717000" />
-      <workItem from="1695764011719" duration="15742000" />
+      <workItem from="1695764011719" duration="18023000" />
+      <workItem from="1695861762649" duration="483000" />
+      <workItem from="1695862264567" duration="1196000" />
+      <workItem from="1695918000002" duration="95000" />
+      <workItem from="1695918104388" duration="3727000" />
     </task>
     <servers />
   </component>
@@ -148,16 +144,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit of progress" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit of progress" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/index.js</url>
-          <line>18</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
